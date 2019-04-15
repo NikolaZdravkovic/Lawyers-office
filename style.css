@@ -1,12 +1,7 @@
-
-
-
-
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     overflow-x: hidden !important;
- 
 }
 
 ul {
@@ -1546,8 +1541,7 @@ img {
     margin-top: -37px;
 }
 
-.footer-widget{
-
+.footer-widget {
     margin-top: 15px;
 }
 
@@ -2834,7 +2828,18 @@ img {
     text-align: justify;
 }
 
-#section3 {}
+#section3 i {
+    color: #8d8d8d;
+    padding-top: 15px;
+}
+
+#section3 p {
+    color: #8d8d8d;
+}
+
+#section3 h5 {
+    color: darkgoldenrod;
+}
 
 #section41 {}
 
