@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Čimburović-Zdravković</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/image-team/logo2.png">
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <!-- W3 school css-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+    <!-- BEGAIN PRELOADER -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    <!-- END SCROLL TOP BUTTON -->
+
+    <!-- Start header -->
+    <!-- header top search -->
+
+    <!-- header bottom -->
+    <div class="header-bottom">
+        <div>
+            <div class="header-contact">
+                <ul>
+                    <li>
+                        <div class="phone">
+                            <i class="fa fa-phone"></i>
+                            +381 (11) 409.11.76
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="phone">
+                            <i class="fa fa-map-marker "></i>
+                            Vojvode Stepe 202, Vozdovac
+                            11000 Beograd
+                        </div>
+                    </li>
+                    <li>
+
+                        <div class="mail">
+                            <i class="fa fa-envelope"></i>
+                            iam@domain.com
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- End header -->
+
+    <!-- Start login modal window -->
+    <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
+        <div class="modal-dialog">
+            <!-- Start login section -->
+            <div id="login-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span
+                            aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Login</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="User name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="loginbox">
+                            <label><input type="checkbox"><span>Remember me</span></label>
+                            <button class="btn signin-btn" type="button">SIGN IN</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer footer-box">
+                    <a href="#">Forgot password ?</a>
+                    <span>No account ? <a id="signup-btn" href="#">Sign Up.</a></span>
+                </div>
+            </div>
+            <!-- Start signup section -->
+            <div id="signup-content" class="modal-content">
+                <div class="modal-header">
+                    <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span
+                            aria-hidden="true">×</span></button>
+                    <h4 class="modal-title"><i class="fa fa-lock"></i>Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input placeholder="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control">
+                        </div>
+                        <div class="signupbox">
+                            <span>Already got account? <a id="login-btn" href="#">Sign In.</a></span>
+                        </div>
+                        <div class="loginbox">
+                            <label><input type="checkbox"><span>Remember me</span><i class="fa"></i></label>
+                            <button class="btn signin-btn" type="button">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login modal window -->
+
+    <!-- BEGIN MENU -->
+    <section id="menu-area">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-logo">
+                <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- LOGO -->
+                    <!-- TEXT BASED LOGO -->
+                    <div id="logo" class="clearfix"><img src="assets/images/image-team/logo2.png" alt=""></div>
+
+
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+                        <li class=""><a href="index.html">Početna</a></li>
+                        <li><a href="#section1">Oblasti rada</a></li>
+                        <li class="dropdown">
+                            <a href="team.html">Naš tim <span class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="team.html">Partneri</a></li>
+                                <li><a href="team.html">Saradnici</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="#section2">Klijenti</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span
+                                    class="fa fa-angle-down"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li><a href="blog1.html">Usvojen novi zakon o strancima</a></li>
+                                <li><a href="blog2.html">
+                                        Zakon o centralnoj evidenciji stvarnih
+                                        vlasnika</a></li>
+                                <li><a href="blog3.html">Novine u postupku upisa u katastar
+                                        nepokretnosti i vodova</a></li>
+                                <li><a href="blog4.html">Blog Single with out Sidebar</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#section3">Kontakt</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+
+            </div>
+        </nav>
+    </section>
+    <!-- END MENU -->
+
+    <!-- Start slider -->
+    <section id="slider">
+        <div class="main-slider">
+            <div class="single-slide">
+                <img src="assets/images/image-slides/statue-of-goddess-justice.jpg" alt="img">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slide-article">
+                                    <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Advokatska
+                                        kancelarija sa renomeom</h1>
+                                    <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Mi smo
+                                        spremni da Vam damo pravni savet i stanemo u zaštitu Vaših prava</p>
+                                    <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"
+                                        href="#">Saznaj više</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <img src="assets/images/image-slides/background.jpg" alt="img">
+
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slide-article">
+                                    <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Odani svom
+                                        poslu i odani Vama!</h1>
+                                    <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Naši
+                                        klijenti mogu računati na diskreciju, profesionalni pristup i sposobnost za
+                                        rešavanje redovnih i najkomplikovanijih pravnih pitanja na najbrži i
+                                        najefikasniji način.</p>
+                                    <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"
+                                        href="#">Saznaj više</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slide">
+                <img src="assets/images/image-slides/Slide 3.jpg" alt="img">
+
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="slide-article">
+                                    <h1 class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Imamo
+                                        iskustva!</h1>
+                                    <p class="wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.75s">Sarađujemo
+                                        sa velikim brojem eminentnih stručnjaka i sudskih veštaka iz različitih oblasti
+                                        (saobraćajne, ekonomske, medicinske, mašinske struke i dr.) a sve u cilju što
+                                        efikasnijeg, kvalitetnijeg i pouzdanijeg rešavanja Vaših pravnih problema.
+
+                                    </p>
+                                    <a class="read-more-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"
+                                        href="#">Saznaj više</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End slider -->
+
+    <!-- Start Service -->
+    <section id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="section1" class="title-area">
+                        <h2 class="title">Oblasti rada</h2>
+                        <span class="line"></span>
+                        <p>Trudimo se da budemo uspešni u svim poljima rada, ovo je samo od
+                            nekih usluga koje pružamo našim klijentima</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="service-content">
+                        <div class="row">
+                            <!-- Start single service -->
+
+                            <div class="col-md-4 col-sm-6 zoom">
+                                <div class="single-service wow zoomIn text-center">
+                                    <div> <img src="assets/Icons/briefcase.png" height="90px; margin" alt=""></div><br>
+                                    <h4 class="service-title">Naknada štete</h4>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form.</p>
+                                </div>
+                            </div>
+
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <a href="">
+                                <div class="col-md-4 col-sm-6 zoom">
+                                    <div class="single-service wow zoomIn text-center">
+                                        <div><img src="assets/Icons/fingerprint.png" height="90px;" alt=""></div><br>
+                                        <h4 class="service-title">Krivično pravo</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <a href="">
+                                <div class="col-md-4 col-sm-6 zoom">
+                                    <div class="single-service wow zoomIn text-center">
+                                        <div><img src="assets/Icons/house.png" height="90px;;" alt=""></div><br>
+                                        <h4 class="service-title">Imovinsko pravo</h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <a href="">
+                                <div class="col-md-4 col-sm-6 zoom">
+                                    <div class="single-service wow zoomIn text-center">
+                                        <div><img src="assets/Icons/employee.png" height="90px;;" alt=""></div><br>
+                                        <h4 class="service-title">Radno pravo
+                                        </h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <a href="">
+                                <div class="col-md-4 col-sm-6 zoom">
+                                    <div class="single-service wow zoomIn text-center">
+                                        <div><img src="assets/Icons/family-room.png" height="90px;" alt=""></div><br>
+                                        <h4 class="service-title">Porodično pravo
+                                        </h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End single service -->
+                            <!-- Start single service -->
+                            <a href="">
+                                <div class="col-md-4 col-sm-6 zoom">
+                                    <div class="single-service wow zoomIn text-center">
+                                        <div><img src="assets/Icons/contract.png" height="90px;" alt=""></div><br>
+                                        <h4 class="service-title">Ugovorno pravo
+                                        </h4>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form.</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- End single service -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Service -->
+
+
+
+
+
+    <!-- Start about  -->
+    <section id="about">
+        <div id="upoznajteNasTim">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">Upoznajte naš tim</h2>
+                        <span class="line"></span>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="about-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="our-skill wow fadeInLeft">
+                                    <h3>Naš rad</h3>
+                                    <div class="our-skill-content">
+                                        <p>Nije jednostavno objasniti suštinu rada advokatske kancelarije. Iz
+                                            spoljašnje perspektive može delovati da mnoge od njih funkcionišu na isti
+                                            način. Ipak, smatramo da ono što Advokatsku kancelariju Žunić izdvaja
+                                            počiva na dva osnovna stuba: iskustvu, sa jedne strane i inovativnoj
+                                            ekspertizi, sa druge. Već trideset godina Advokatska kancelarija Čimburović
+                                            i Zdravković je posvećena pružanju usluga najvišeg profesionalnog
+                                            standarda. Ovaj dokazan i prepoznat pristup kombinujemo sa potpuno
+                                            inovativnim i savremenim načinom rešavanja pravnih problema u kompletno
+                                            novim poljima prava, po ugledu na advokatske kancelarije iz Velike
+                                            Britanije i SAD. Naš tim je predvođen diplomcima vodećih svetskih
+                                            univerziteta, kao što su Univerzitet u Kembridžu i Univerzitet Koledž
+                                            London. Ta činjenica nam omogućava da pristupamo advokaturi potpuno
+                                            drugačije i da rešavamo pravne probleme u skladu sa međunarodnim
+                                            standardima.
+
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="why-choose-us wow fadeInUp">
+                                    <h3>Zašto baš mi?</h3>
+                                    <div class="panel-group why-choose-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                        href="#collapseOne">
+                                                        MI SMO TU ZBOG VAS, A NE OBRATNO <span
+                                                            class="fa fa-minus-square"></span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+
+                                                    <p> Vođeni krilaticom – „klijent je centar našeg sveta“, ulažemo
+                                                        ogroman rad, trud i entuzijazam u cilju besprekornog pružanja
+                                                        pravne pomoći.
+                                                        Specijalizovani smo u pružanja usluga u domenu privrednog
+                                                        prava, kao i svih vrsta građanskih postupaka.
+                                                        Odlikuju nas otvorenost i iskrenost, tako da možete očekivati
+                                                        da ćemo vaš pravni problem analizirati iz više uglova, pritom
+                                                        vam ukazavši na sve relevantne činjenice od kojih može zavisiti
+                                                        vaš uspeh u sporu.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                        href="#collapseTwo">
+                                                        PRUŽAMO USLUGE U SVIM OBLASTIMA<span
+                                                            class="fa fa-plus-square"></span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>Advokatska kancelarija Čimburović i Zdravković pruža usluge
+                                                        klijentima u svim oblastima korporativnog zastupanja i
+                                                        savetovanja.
+                                                        Sveobuhvatna stručna podrška u rešavanju kompleksnih pravnih i
+                                                        poslovnih pitanja zasniva se na individualnoj posvećenosti
+                                                        svakom klijentu.
+                                                        U cilju ekonomičnosti i efikasnosti, a uz očuvanje kvaliteta
+                                                        naših usluga, klijente zastupamo i na bazi potpunog pravnog
+                                                        konsaltinga (outsourcing pravni savetnici). </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion"
+                                                        href="#collapseThree">
+                                                        NAŠI KLIJENTI<span class="fa fa-plus-square"></span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <p>Sa ponosom ističemo da su naši klijenti lideri u svojim
+                                                        delatnostima u raznim oblastima privrednog poslovanja, ali zbog
+                                                        kodeksa advokatske etike i obaveze čuvanja advokatske tajne
+                                                        naše pojedine klijente ne možemo da imenujemo. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end about -->
+
+    <!-- Start counter -->
+
+
+
+
+    <!--<section id="counter">
+       
+    </section>-->
+    <!-- End counter -->
+
+
+    <!-- Start Clients -->
+    <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div id="section2" class="col-md-12">
+                    <div class="title-area wow zoomIn">
+                        <h2 class="title">Klijenti</h2>
+                        <span class="line"></span>
+                        <p>Najviši prioiret naše kancelarije je uspeh naših klijenata. Naši
+                            dosadašnji rezultati i posvećenost u pružanju inovativnih rešenja poštujući ugovoreni rok
+                            prevazilaze očekivanja naših klijenata. Najviši princip u odnosu sa klijentima je da naš
+                            tim učinimo vašim timom. Težimo da izađemo u susret vašim potrebama u svakom
+                            pogledu.Uspostavljamo profesionalan, ali istovremeno i prisan odnos sa klijentima. Način
+                            pružanja usluga i odnos sa klijentima izgradili smo na osnovu fleksibilnosti,
+                            pragmatičnosti, analitičnosti, posvećenosti i poverenju, primenjujući istovremeno i pravno
+                            i praktično znanje prilikom sagledavanja potreba klijenata sa pravnog, komercijalnog,
+                            poreskog, PR i socijalnog aspekta. Trudimo se da na ovaj način izađemo iz okvira ustaljenog
+                            odnosa klijent-advokat koji se isključivo odnosio na strogo pravno sagledavanje situacije i
+                            rezultirao neprimenjivim rešenjima.
+
+                            Lista naših klijenata uključuje brojne domaće i strane kompanije, mnoge ustanove i
+                            organizacije i veliki broj pojedinaca – fizičkih lica. Neki od naših klijenata i
+                            kooperanata na zajedničkim projektima pomenuti su i na ovoj listi.
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- End Clients -->
+
+    <!--Start Client Slider-->
+
+
+
+    <!-- Start Testimonial section -->
+
+    <!-- End Testimonial section -->
+
+
+    <!-- Start latest news -->
+    <section id="latest-news">
+
+        <div class="conatiner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-area">
+                        <h2 class="title">Blog</h2>
+                        <span class="line"></span>
+                        <h3>Saznajte nove zanimljivosti na našem blog portalu</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start blog slider-->
+        <div class="slider">
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img
+                                src="assets/images/image-blog/shutterstock_1.jpg"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="blog-single-with-right-sidebar.html">Usvojen novi zakon o strancima</a></h2>
+                        <p>By <a class="blog-author" href="#">Stefan Zdravković</a> <span class="blog-date">|27
+                                Septembar 2018</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Dana 22.3.2018. godine Narodna skupština Republike Srbije usvojila je Zakon o strancima
+                            (“Sl. glasnik RS”, br. 24/2018), (u daljem tekstu: Zakon). Zakon je stupio na snagu dana
+                            3.4.2018. godine, a počeće da se primenjuje nakon šest meseci od dana stupanja na snagu,
+                            odnosno dana 3.10.2018. godine.</p>
+                        <a class="blog-more-btn" href="assets/images/image-blog/shutterstock_2.jpg">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img src="assets/images/image-blog/blog-img-3.jpg"
+                                alt="image"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="assets/images/image-blog/blog-img-3.jpg">Zakon o centralnoj evidenciji stvarnih
+                                vlasnika</a></h2>
+                        <p>By <a class="blog-author" href="#">Stefan Zdravković</a> <span class="blog-date">|13 Oktobar
+                                2018</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Primarni cilj donošenja ovog Zakona je uvođenje jedinstvene baze podataka o stvarnim
+                            vlasnicima pravnih lica i drugih subjekata koji su registrovani u odgovarajućim registrima
+                            u Republici Srbiji, radi unapređenja postojećeg sistema otkrivanja i sprečavanja pranja
+                            novca i finansiranja terorizma.</p>
+                        <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img src="assets/images/image-blog/blog-img-3.jpg"
+                                alt="image"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="blog-single-with-right-sidebar.html">Novine u postupku upisa u katastar
+                                nepokretnosti i vodova</a></h2>
+                        <p>By <a class="blog-author" href="#">Stefan Zdravković</a> <span class="blog-date">|25 Oktobar
+                                2018</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Dana 08.06.2018. godine stupio je na snagu Zakon o postupku upisa u katastar nepokretnosti i
+                            vodova (“Sl. glasnik RS” br. 41/2018)</p>
+                        <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img src="assets/images/image-blog/blog-img-3.jpg"
+                                alt="image"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="blog-single-with-right-sidebar.html">Personal Note Details</a></h2>
+                        <p>By <a class="blog-author" href="#">John Powell</a> <span class="blog-date">|18 October
+                                2015</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the</p>
+                        <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img src="assets/images/image-blog/blog-img-3.jpg"
+                                alt="image"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="blog-single-with-right-sidebar.html">Personal Note Details</a></h2>
+                        <p>By <a class="blog-author" href="#">John Powell</a> <span class="blog-date">|18 October
+                                2015</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the</p>
+                        <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- start single latest news -->
+            <div class="col-md-4">
+                <article class="blog-news-single">
+                    <div class="blog-news-img">
+                        <a href="blog-single-with-right-sidebar.html"><img src="assets/images/image-blog/blog-img-3.jpg"
+                                alt="image"></a>
+                    </div>
+                    <div class="blog-news-title">
+                        <h2><a href="blog-single-with-right-sidebar.html">Personal Note Details</a></h2>
+                        <p>By <a class="blog-author" href="#">John Powell</a> <span class="blog-date">|18 October
+                                2015</span></p>
+                    </div>
+                    <div class="blog-news-details">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the</p>
+                        <a class="blog-more-btn" href="blog-single-with-right-sidebar.html">Read More <i
+                                class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- End latest news -->
+
+
+
+
+
+
+    <!-- Start bottom page  -->
+    <section id="bottom-page">
+        <div class="container">
+            <div style="padding-top: 30px;" class="row">
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-widget"> <img alt="" src="assets/images/image-team/logo2.png" height="90px;">
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-widget">
+                        <h5 class="widget-title pb-10">Oblasti prava<span class="line-bottom"></span></h5>
+                        <ul class="list-divider">
+                            <li><a href=""> Naknada štete</a></li>
+                            <li><a href=""> Krivično pravo</a></li>
+                            <li><a href=""> Imovinsko pravo</a></li>
+                            <li><a href="">Radno pravo</a></li>
+                            <li><a href="">Porodično pravo</a></li>
+
+                            <li><a href="Usluge-/Pravo osiguranja.html"> Ugovorno pravo</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Stranice<span class="line-bottom"></span></h5>
+                        <ul>
+                            <li><a href="../index.html">Početna</a></li>
+                            <li><a href="../O-nama/O-nama.html">Obalsti rada</a></li>
+                            <li><a id="ourteam-line" href="../Klijenti/Klijenti.html">Naš tim</a></li>
+                            <li><a id="bline" href="../Kolektiv/Kolektiv.html">Klijenti</a></li>
+                            <li><a id="blog-line" href="../Usluge/Usluge.html">Blog</a></li>
+                            <li><a id="contact-line" href="Kontakt.html">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="footer-widget">
+                        <h5 class="widget-title pb-10">Kontakt<span class="line-bottom"></span></h5>
+                        <form id="quick_contact_form1" name="footer_quick_contact_form" class="quick-contact-form"
+                            action="includes/quickcontact.php" method="post">
+                            <div class="form-group">
+                                <input id="form_email" name="form_email" class="form-control" type="text" required=""
+                                    placeholder="Vaša e-mail adresa">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="form_message" name="form_message" class="form-control" required=""
+                                    placeholder="Tekst poruke" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden"
+                                    value="">
+
+                                <!-- OSTALO TI JE OVDE DA OVO DUGME SREDIS KAO I CELU OVU KONTAKT FORMU U PHP-->
+
+
+                                <button style="color: black" type="submit"
+                                    class="btn btn-dark btn-theme-colored btn-xs btn-flat mt-0"
+                                    data-loading-text="Molimo sačekajte...">Pošalji</button>
+                            </div>
+                        </form>
+                        <!-- Quick Contact Form Validation-->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row clearfix">
+                <div id="section3" class="col-md-12">
+
+                    <div class="horizontal-contact-widget mt-50 pt-30 text-center">
+                        <hr>
+                        <div class="col-sm-12 col-sm-4 mt-sm-50">
+                            <div class="each-widget">
+                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-mobile fa-2x"
+                                        aria-hidden="true"></i></div>
+                                <h5 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Kontakt
+                                </h5>
+                                <p style="color: #8d8d8d">Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-sm-4 mt-sm-50">
+                            <div class="each-widget">
+                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-location-arrow fa-2x"
+                                        aria-hidden="true"></i></div>
+                                <h5 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Adresa</h5>
+                                <p style="color: #8d8d8d">Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-sm-4 mt-sm-50">
+                            <div class="each-widget">
+                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-envelope fa-2x"
+                                        aria-hidden="true"></i></div>
+                                <h5 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">E-mail</h5>
+                                <p><a style="color: #8d8d8d">office@adv-cimb-zdra.co.rs</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="map"></div>
+    </section>
+    <!-- End bottom page -->
+
+    <!-- Start footer -->
+    <footer id="footer">
+        <div class="container">
+
+
+
+            <div class="footer-left text-center">
+                <p>Designed by <a href="https://github.com/NikolaZdravkovic">Nikola Zdravkovic</a></p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+    <!-- End footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- Slick Slider -->
+    <script type="text/javascript" src="assets/slick/slick.js"></script>
+
+    <!-- Wow animation -->
+    <script type="text/javascript" src="assets/js/wow.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCampeZ1GYNvhDdMrCKSsCid31yXTh3R5M&callback=initMap"></script>
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="app.js"></script>
+
+
+</body>
+
+</html>
