@@ -168,71 +168,141 @@ $(function () {
 
 /* 9. LOCAL STORAGE FOR QUICK FORM */
 
-const email = document.getElementById('form_email');
-const message = document.getElementById('form_message');
+// const email = document.getElementById('form_email');
+// const message = document.getElementById('form_message');
+// const modal = document.getElementById('id01');
+
+
+// //Event listner
+
+// document.getElementById('form').addEventListener('submit', localStr)
+
+
+// // Check email(regex)
+// checkEmail = () => {
+
+// 	var filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+// 	if (!filter.test(email.value)) {
+// 		alert('please enter bla bla')
+// 		email.value = '';
+// 		return false;
+// 	}
+// 	getData();
+// }
+
+// // Local storage (setData and getData)
+// getData = () => {
+
+// 	localStorage.setItem('message', message.value)
+// 	localStorage.setItem("email", email.value);
+// 	document.getElementById('showEmail').innerHTML = localStorage.getItem('email');
+// 	document.getElementById('showMessage').innerHTML = localStorage.getItem('message');
+
+// 	modal.style.display = 'block';
+
+// }
+// // Cancel function
+// cancel = () => {
+// 	localStorage.clear();
+// 	modal.style.display = "none";
+// }
+// // Confrim message function
+// sendMsg = () => {
+
+// 	// show loader
+// 	document.getElementById("question").style.display = "none";
+// 	document.getElementById('loading').style.display = "block";
+// 	// modal.style.display = "none";
+// 	setTimeout(endMsg, 2000);
+// }
+
+
+// // Local storage function
+
+// function localStr(e) {
+
+// 	checkEmail();
+
+// 	e.preventDefault();
+// }
+
+// endMsg = () => {
+// 	document.getElementById('showEnd').style.display = "block";
+// 	document.getElementById('loading').style.display = "none";
+
+// }
+
+// ok = () => {
+// 	document.getElementById('id01').style.display = 'none';
+// 	window.location.reload()
+// }
+
+
+
+
+
+
+
+document.getElementById("btn").addEventListener("click", signup);
+let users = [];
+let lastUser = JSON.stringify(users.slice(-1)[0]);
 const modal = document.getElementById('id01');
 
 
-//Event listner
+function signup(event) {
+	event.preventDefault();
 
-document.getElementById('form').addEventListener('submit', localStr)
+	const email = document.getElementById("email").value;
+	const message = document.getElementById("message").value;
 
 
-// Check email(regex)
-checkEmail = () => {
 
-	var filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-	if (!filter.test(email.value)) {
-		alert('please enter bla bla')
-		email.value = '';
-		return false;
-	}
-	getData();
+
+	save(email, message);
 }
 
-// Local storage (setData and getData)
-getData = () => {
+function save(email, message) {
+	const newUser = {
+		email: email,
+		message: message,
 
-	localStorage.setItem('message', message.value)
-	localStorage.setItem("email", email.value);
-	document.getElementById('showEmail').innerHTML = localStorage.getItem('email');
-	document.getElementById('showMessage').innerHTML = localStorage.getItem('message');
+	};
+
+	if (localStorage.getItem("users")) {
+		users = JSON.parse(localStorage.getItem("users"));
+
+		if (!users.find(user => user.email === newUser.email)) {
+			users.push(newUser);
+			localStorage.setItem("users", JSON.stringify(users));
+			alert(`User successfully registered!`);
+		} else {
+			alert(`User ${email} already exist!`);
+		}
+	} else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
+		// ne postoji polje/kljuc "users"
+		users.push(newUser);
+		localStorage.setItem("users", JSON.stringify(users));
+		alert(`User successfully registered!`);
+	}
 
 	modal.style.display = 'block';
 
+
+
+	
+	document.getElementById('showMessage').innerHTML = message;
+
+
+
+
 }
-// Cancel function
+
 cancel = () => {
-	localStorage.clear();
-	modal.style.display = "none";
+	users = JSON.parse(localStorage.getItem("users"));
+	users.pop();
+	localStorage.setItem("users", JSON.stringify(users));
 }
-// Confrim message function
+
 sendMsg = () => {
-
-	// show loader
-	document.getElementById("question").style.display = "none";
-	document.getElementById('loading').style.display = "block";
-	// modal.style.display = "none";
-	setTimeout(endMsg, 2000);
-}
-
-
-// Local storage function
-
-function localStr(e) {
-
-	checkEmail();
-
-	e.preventDefault();
-}
-
-endMsg = () => {
-	document.getElementById('showEnd').style.display = "block";
-	document.getElementById('loading').style.display = "none";
-
-}
-
-ok = () => {
-	document.getElementById('id01').style.display = 'none';
-	window.location.reload()
+	users;
 }
