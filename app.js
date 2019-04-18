@@ -246,7 +246,63 @@ $(function () {
 document.getElementById("btn").addEventListener("click", signup);
 let users = [];
 const modal = document.getElementById('id01');
+const email = document.getElementById("email");
+const message = document.getElementById("message");
 
+// Pozivamo eventListener sa kojim ujedno i cekiramo mail validaciju
+function signup(event) {
+	event.preventDefault();
+
+	validation();
+
+
+}
+
+function save(email, message) {
+	const newUser = {
+		email: email,
+		message: message,
+
+	};
+
+
+
+	if (localStorage.getItem("users")) {
+		users = JSON.parse(localStorage.getItem("users"));
+
+		if (!users.find(user => user.email === newUser.email)) {
+			users.push(newUser);
+			localStorage.setItem("users", JSON.stringify(users));
+			alert(`User successfully registered!`);
+		} else {
+			alert(`User ${email} already exist!`);
+		}
+	} else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
+		// ne postoji polje/kljuc "users"
+		users.push(newUser);
+		localStorage.setItem("users", JSON.stringify(users));
+		alert(`User successfully registered!`);
+	}
+
+	modal.style.display = 'block';
+
+
+	document.getElementById('showMessage').innerHTML = message;
+	document.getElementById('showEmail').innerHTML = email;
+
+
+}
+
+// Check email(regex)
+validation = () => {
+	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+	if (!filter.test(email.value)) {
+		alert('please enter bla bla')
+		// return false;
+	} else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
+		save(email.value, message.value);
+	}
+}
 
 const endMsg = () => {
 	document.getElementById('showEnd').style.display = "block";
@@ -275,52 +331,4 @@ const ok = () => {
 	document.getElementById('id01').style.display = 'none';
 	window.location.reload()
 }
-
-
-
-function signup(event) {
-	event.preventDefault();
-
-	const email = document.getElementById("email").value;
-	const message = document.getElementById("message").value;
-
-
-
-
-	save(email, message);
-}
-
-function save(email, message) {
-	const newUser = {
-		email: email,
-		message: message,
-
-	};
-
-	if (localStorage.getItem("users")) {
-		users = JSON.parse(localStorage.getItem("users"));
-
-		if (!users.find(user => user.email === newUser.email)) {
-			users.push(newUser);
-			localStorage.setItem("users", JSON.stringify(users));
-			alert(`User successfully registered!`);
-		} else {
-			alert(`User ${email} already exist!`);
-		}
-	} else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
-		// ne postoji polje/kljuc "users"
-		users.push(newUser);
-		localStorage.setItem("users", JSON.stringify(users));
-		alert(`User successfully registered!`);
-	}
-
-	modal.style.display = 'block';
-
-
-	document.getElementById('showMessage').innerHTML = message;
-	document.getElementById('showEmail').innerHTML = email;
-
-
-}
-
 
