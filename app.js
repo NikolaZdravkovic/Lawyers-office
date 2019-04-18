@@ -245,8 +245,37 @@ $(function () {
 
 document.getElementById("btn").addEventListener("click", signup);
 let users = [];
-let lastUser = JSON.stringify(users.slice(-1)[0]);
 const modal = document.getElementById('id01');
+
+
+const endMsg = () => {
+	document.getElementById('showEnd').style.display = "block";
+	document.getElementById('loading').style.display = "none";
+}
+
+
+const cancel = () => {
+	users = JSON.parse(localStorage.getItem("users"));
+	users.pop();
+	localStorage.setItem("users", JSON.stringify(users));
+	modal.style.display = "none";
+}
+
+const sendMsg = () => {
+	// users;
+	document.getElementById("question").style.display = "none";
+	document.getElementById('loading').style.display = "block";
+
+	setTimeout(endMsg, 2000);
+}
+
+
+
+const ok = () => {
+	document.getElementById('id01').style.display = 'none';
+	window.location.reload()
+}
+
 
 
 function signup(event) {
@@ -288,21 +317,10 @@ function save(email, message) {
 	modal.style.display = 'block';
 
 
-
-	
 	document.getElementById('showMessage').innerHTML = message;
-
-
+	document.getElementById('showEmail').innerHTML = email;
 
 
 }
 
-cancel = () => {
-	users = JSON.parse(localStorage.getItem("users"));
-	users.pop();
-	localStorage.setItem("users", JSON.stringify(users));
-}
 
-sendMsg = () => {
-	users;
-}
