@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Čimburović-Zdravković</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/image-team/logo2.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+    <!-- Bootstrap -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css" />
+    <link rel="stylesheet" href="../assets/slick/slick-theme.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <!-- Theme color -->
+    <link id="switcher" href="../assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <!-- W3 school css-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Main Style -->
+    <link href="../style.css" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Open Sans for body font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- Lato for Title -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+
+  <!-- BEGAIN PRELOADER -->
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  <!-- END PRELOADER -->
+
+  <!-- SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#"><i class="fas fa-angle-up"></i></a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header -->
+  <header id="header">
+    <!-- header top search -->
+    <div class="header-top">
+      <div class="container">
+        <form action="">
+          <div id="search">
+            <input type="text" placeholder="Type your search keyword here and hit Enter..." name="s" id="m_search"
+              style="display: inline-block;">
+            <button type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- header bottom -->
+    <div class="header-bottom">
+
+      <div>
+        <div class="header-contact">
+          <ul>
+            <li>
+              <div class="phone">
+                <i class="fa fa-phone"></i>
+                +381 (11) 409.11.76
+              </div>
+            </li>
+
+            <li>
+              <div class="phone">
+                <i class="fa fa-map-marker "></i>
+                Vojvode Stepe 202, Vozdovac
+                11000 Beograd
+              </div>
+            </li>
+            <li>
+
+              <div class="mail">
+                <i class="fa fa-envelope"></i>
+                iam@domain.com
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </header>
+  <!-- End header -->
+
+  <!-- Start login modal window -->
+  <div aria-hidden="false" role="dialog" tabindex="-1" id="login-form" class="modal leread-modal fade in">
+    <div class="modal-dialog">
+      <!-- Start login section -->
+      <div id="login-content" class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span
+              aria-hidden="true">×</span></button>
+          <h4 class="modal-title"><i class="fa fa-unlock-alt"></i>Login</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <input type="text" placeholder="User name" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="loginbox">
+              <label><input type="checkbox"><span>Remember me</span></label>
+              <button class="btn signin-btn" type="button">SIGN IN</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer footer-box">
+          <a href="#">Forgot password ?</a>
+          <span>No account ? <a id="signup-btn" href="#">Sign Up.</a></span>
+        </div>
+      </div>
+      <!-- Start signup section -->
+      <div id="signup-content" class="modal-content">
+        <div class="modal-header">
+          <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span
+              aria-hidden="true">×</span></button>
+          <h4 class="modal-title"><i class="fa fa-lock"></i>Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <input placeholder="Name" class="form-control">
+            </div>
+            <div class="form-group">
+              <input placeholder="Username" class="form-control">
+            </div>
+            <div class="form-group">
+              <input placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="signupbox">
+              <span>Already got account? <a id="login-btn" href="#">Sign In.</a></span>
+            </div>
+            <div class="loginbox">
+              <label><input type="checkbox"><span>Remember me</span><i class="fa"></i></label>
+              <button class="btn signin-btn" type="button">SIGN UP</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End login modal window -->
+
+  <!-- BEGIN MENU -->
+  <section id="menu-area">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-logo">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->
+          <!-- TEXT BASED LOGO -->
+          <div id="logo" class="clearfix"><img src="image-team/logo2.png" alt=""></div>
+          <!-- IMG BASED LOGO  -->
+          <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
+            <li class=""><a href="index.html">Početna</a></li>
+            <li><a href="index.html#service">Oblasti rada</a></li>
+            <li class="dropdown">
+              <a href="team.html">Naš tim <span class="fa fa-angle-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="team.html">Partneri</a></li>
+                <li><a href="team.html">Saradnici</a></li>
+
+              </ul>
+            </li>
+            <li><a href="index.html#section2">Klijenti</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="fa fa-angle-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+
+                <li><a href="blog1.html">Usvojen novi zakon o strancima</a></li>
+                <li><a href="blog2.html">
+                    Zakon o centralnoj evidenciji stvarnih
+                    vlasnika</a></li>
+                <li><a href="blog3.html">Novine u postupku upisa u katastar
+                    nepokretnosti i vodova</a></li>
+                <li><a href="blog4.html">Blog Single with out Sidebar</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#section3">Kontakt</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+
+      </div>
+    </nav>
+  </section>
+  <!-- END MENU -->
+
+  <!-- Start single page header -->
+  <section id="single-page-header">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="single-page-header-left">
+              <h2>Advokat</h2>
+              <h3>Ljubomir Čimburović</h3>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="single-page-header-right">
+              <ol class="breadcrumb">
+                <li><a href="index.html">Početna</a></li>
+                <li class="active">Naš tim</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End single page header -->
+
+  <!--SECTION LJUBA-->
+
+  <section>
+    <div id="LjubaKontakt" class="container">
+      <p><strong> Email</strong>:<a href="mailto:webmaster@example.com">ljubomir@gmail.com</a><br>
+        <strong>Telefon</strong>: 065654656</p>
+      <span class="line"></span>
+    </div>
+
+    <div class="container">
+      <div class="single-page">
+
+        <img src="../assets/images/image-team/Gandalf.jpg" alt="" class="star">
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.It is a long established fact that a
+          reader will be distracted by the readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+          'Content here, content here', making it look like readable English. Many desktop publishing packages
+          and web page editors now use. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit eos officia cumque
+          ad perspiciatis nulla dolorem corrupti, ullam, reiciendis qui optio, temporibus sunt dicta adipisci repellat
+          aliquam! Debitis, ipsam soluta. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit
+          veritatis reprehenderit magnam in mollitia nisi dolor sed labore saepe, consequuntur minima necessitatibus
+          iusto error asperiores officia! Suscipit, modi illum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Illum, molestias facilis eius saepe quas vel. Obcaecati aut repudiandae exercitationem dolor natus
+          consequatur, repellat, nemo facilis laboriosam fuga reiciendis nostrum fugit! Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Sunt pariatur, iusto doloremque facere architecto cupiditate cum quas
+          necessitatibus, odio rem ab explicabo laboriosam sed aliquid nostrum amet nulla tempore magni! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Sit magni voluptatibus similique, est totam ipsum? Magnam sed
+          ut, possimus aperiam temporibus odio illo repellendus sapiente ipsa iure, laborum, facilis libero. </p>
+
+
+        <div class="moon"></div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.It is a long established fact that a
+          reader will be distracted by the readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+          'Content here, content here', making it look like readable English. Many desktop publishing packages
+          and web page editors now use. </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- End Feature -->
+
+  <!-- Start subscribe us -->
+  <section id="bottom-page">
+    <div class="container">
+      <div style="padding-top: 30px;" class="row">
+
+        <div class="col-sm-6 col-md-3">
+          <div style="margin-top: 15px;" class="footer-widget"> <img alt="" src="image-team/logo2.png" height="90px;">
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+          <div class="footer-widget">
+            <h5 class="widget-title pb-10">Oblasti prava<span class="line-bottom"></span></h5>
+            <ul class="list-divider">
+              <li><a href=""> Naknada štete</a></li>
+              <li><a href=""> Krivično pravo</a></li>
+              <li><a href=""> Imovinsko pravo</a></li>
+              <li><a href="">Radno pravo</a></li>
+              <li><a href="">Porodično pravo</a></li>
+
+              <li><a href="Usluge-/Pravo osiguranja.html"> Ugovorno pravo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="footer-widget">
+            <h5 class="widget-title">Stranice<span class="line-bottom"></span></h5>
+            <ul>
+              <li><a href="../index.html">Početna</a></li>
+              <li><a href="../O-nama/O-nama.html">Obalsti rada</a></li>
+              <li><a id="ourteam-line" href="../Klijenti/Klijenti.html">Naš tim</a></li>
+              <li><a id="client-line" href="../Kolektiv/Kolektiv.html">Klijenti</a></li>
+              <li><a id="blog-line" href="../Usluge/Usluge.html">Blog</a></li>
+              <li><a id="contact-line" href="Kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+          <div class="footer-widget">
+            <h5 class="widget-title pb-10">Kontakt<span class="line-bottom"></span></h5>
+            <form id="quick_contact_form1" name="footer_quick_contact_form" class="quick-contact-form"
+              action="includes/quickcontact.php" method="post">
+              <div class="form-group">
+                <input id="form_email" name="form_email" class="form-control" type="text" required=""
+                  placeholder="Vaša e-mail adresa">
+              </div>
+              <div class="form-group">
+                <textarea id="form_message" name="form_message" class="form-control" required=""
+                  placeholder="Tekst poruke" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                <button style="color: black" type="submit" class="btn btn-dark btn-theme-colored btn-xs btn-flat mt-0"
+                  data-loading-text="Molimo sačekajte...">Pošalji</button>
+              </div>
+            </form>
+            <!-- Quick Contact Form Validation-->
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row clearfix">
+        <div id="section3" class="col-md-12">
+
+          <div class="horizontal-contact-widget mt-50 pt-30 text-center">
+            <hr>
+            <div class="col-sm-12 col-sm-4 mt-sm-50">
+              <div class="each-widget">
+                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                </div>
+                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Kontakt</h4>
+                <p style="color: #8d8d8d">Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43 </p>
+              </div>
+            </div>
+            <div class="col-sm-12 col-sm-4 mt-sm-50">
+              <div class="each-widget">
+                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-location-arrow fa-2x"
+                    aria-hidden="true"></i></div>
+                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Adresa</h4>
+                <p style="color: #8d8d8d">Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
+              </div>
+            </div>
+            <div class="col-sm-12 col-sm-4 mt-sm-50">
+              <div class="each-widget">
+                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                </div>
+                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">E-mail</h4>
+                <p><a style="color: #8d8d8d" href="mailto:office@adv-bijelic.co.rs">office@adv-bijelic.co.rs</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="map"></div>
+  </section>
+  <!-- End subscribe us -->
+
+  <!-- Start footer -->
+  <footer id="footer">
+    <div class="container">
+
+
+
+      <div class="footer-left text-center">
+        <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+  <!-- End footer -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="../assets/js/bootstrap.js"></script>
+  <!-- Slick Slider -->
+  <script type="text/javascript" src="../assets/slick/slick.js"></script>
+
+  <!-- Wow animation -->
+  <script type="text/javascript" src="../assets/js/wow.js"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCampeZ1GYNvhDdMrCKSsCid31yXTh3R5M&callback=initMap"></script>
+
+  <!-- Custom js -->
+  <script type="text/javascript" src="../app.js"></script>
+
+
+</body>
+
+</html>

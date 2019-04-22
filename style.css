@@ -536,13 +536,13 @@ img {
 }
 
 .main-slider .slick-prev::before {
-    content: "\f104";
+    content: "\2039";
     font-family: fontAwesome;
     font-size: 30px;
 }
 
 .main-slider .slick-next::before {
-    content: "\f105";
+    content: "\203A";
     font-family: fontAwesome;
     font-size: 30px;
 }
