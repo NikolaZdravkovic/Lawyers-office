@@ -2,6 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     overflow-x: hidden !important;
+    
 }
 
 ul {
@@ -636,7 +637,7 @@ img {
 /*--------------------*/
 
 #feature {
-    background-color: #fff;
+    background-color:#d9d9d9;
     display: inline;
     float: left;
     padding: 70px 0;
@@ -3130,6 +3131,16 @@ img {
     margin-right: 30px;
     margin-bottom: 20px;
     height: auto;
+}
+
+.star3{
+    float: left;
+    display: block;
+    max-width: 60%;
+    shape-margin: 20px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    height: auto; 
 }
 
 /* NEW CSS FILES*/
