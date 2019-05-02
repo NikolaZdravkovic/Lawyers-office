@@ -3157,6 +3157,13 @@ img {
     backface-visibility: hidden;
 }
 
+.flip-card-back a{
+    text-align: center;
+    color: #383838;
+}
+
+.flip-card-back a:hover{color: #2bcdc1;}
+
 .flip-card-front {
     background-color: rgba(236, 194, 84, 0.2);
     color: black;

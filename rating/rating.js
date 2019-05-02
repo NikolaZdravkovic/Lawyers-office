@@ -62,7 +62,6 @@ function getTasks() {
 
 
 
-
 // Add Task
 function addTask(e) {
 
@@ -73,13 +72,16 @@ function addTask(e) {
         e.stopPropagation()
 
     } if (!filterNameSurname.test(name.value)) {
-        alert("no numbers")
-        e.stopPropagation()
+        return false;
     }
     if (!filterNameSurname.test(surname.value)) {
-        alert("no numbers")
-        e.stopPropagation()
-
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href>Why do I have this issue?</a>'
+          })
+        return false;
     }
     else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
         save(name.value, surname.value, email2.value, text.value);
@@ -148,13 +150,13 @@ function save(name, surname, email2, text) {
         } else {
             alert(`User ${email2} already exist!`);
         }
-    } else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
+    }    //else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
         // ne postoji polje/kljuc "users"
-        tasks.push(newComm);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        alert(`User successfully registered!`);
+        //tasks.push(newComm);
+        //localStorage.setItem("tasks", JSON.stringify(tasks));
+        //alert(`User successfully registered!`);
         // location.assign("login.html");
-    }
+    //}
 
 
 }

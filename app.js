@@ -200,7 +200,7 @@ function saveUser(email, message) {
 		if (!users.find(user => user.email === newUser.email)) {
 			users.push(newUser);
 			localStorage.setItem("users", JSON.stringify(users));
-			alert(`User successfully registered!`);
+			// alert(`User successfully registered!`);
 		} else {
 			alert(`User ${email} already exist!`);
 		}
@@ -208,7 +208,7 @@ function saveUser(email, message) {
 		// ne postoji polje/kljuc "users"
 		users.push(newUser);
 		localStorage.setItem("users", JSON.stringify(users));
-		alert(`User successfully registered!`);
+		// alert(`User successfully registered!`);
 	}
 
 	modal.style.display = 'block';
@@ -224,8 +224,16 @@ function saveUser(email, message) {
 validation = () => {
 	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 	if (!filter.test(email.value)) {
-		alert('please enter bla bla')
+		// alert('please enter bla bla')
 		// return false;
+		Swal.fire({
+			type: 'error',
+			title: 'Pogresan unos email-a',
+			text: 'Molimo Vas, probajte ponovo!',
+		
+		  })
+
+
 	} else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
 		saveUser(email.value, message.value);
 	}
