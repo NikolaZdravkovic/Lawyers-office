@@ -139,27 +139,27 @@ $(function () {
 		autoplay: true,
 		autoplaySpeed: 2000,
 		responsive: [{
-			breakpoint: 1024,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 800,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 500,
+				settings: {
+					centerMode: false,
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
 			}
-		},
-		{
-			breakpoint: 800,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 500,
-			settings: {
-				centerMode: false,
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}
 
 		]
 	});
@@ -167,6 +167,8 @@ $(function () {
 
 
 /* 9. LOCAL STORAGE FOR QUICK FORM */
+
+
 
 
 
@@ -182,10 +184,9 @@ function signup(event) {
 
 	validation();
 
-
 }
 
-function saveUser(email, message) {
+const saveUser = (email, message) => {
 	const newUser = {
 		email: email,
 		message: message,
@@ -193,49 +194,66 @@ function saveUser(email, message) {
 	};
 
 
-
 	if (localStorage.getItem("users")) {
 		users = JSON.parse(localStorage.getItem("users"));
 
-		if (!users.find(user => user.email === newUser.email)) {
-			users.push(newUser);
-			localStorage.setItem("users", JSON.stringify(users));
-			// alert(`User successfully registered!`);
-		} else {
-			alert(`User ${email} already exist!`);
-		}
+		users.push(newUser);
+		localStorage.setItem("users", JSON.stringify(users));
+
 	} else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
 		// ne postoji polje/kljuc "users"
 		users.push(newUser);
 		localStorage.setItem("users", JSON.stringify(users));
-		// alert(`User successfully registered!`);
 	}
-
 	modal.style.display = 'block';
-
 
 	document.getElementById('showMessage').innerHTML = message;
 	document.getElementById('showEmail').innerHTML = email;
 
-
 }
 
-// Check email(regex)
-validation = () => {
+
+function validation() {
 	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-	if (!filter.test(email.value)) {
-		// alert('please enter bla bla')
-		// return false;
+
+	if (email.value === '') {
+		modal.style.display = "none";
+		Swal.fire({
+			type: 'error',
+			title: 'Niste uneli Vas Email!',
+			text: 'Molimo Vas, probajte ponovo!',
+
+		})
+
+	} else if (message.value === '') {
+		modal.style.display = "none";
+		Swal.fire({
+			type: 'error',
+			title: 'Niste uneli nista u tekst poruke',
+			text: 'Molimo Vas, probajte ponovo!',
+
+		})
+
+	} else if (message.value.length <= 20) {
+		modal.style.display = "none";
+		Swal.fire({
+			type: 'error',
+			title: 'Molimo da posaljete poruku sa minimum 20 slova',
+			text: 'Molimo Vas, probajte ponovo!',
+
+		})
+	} else if (!filter.test(email.value)) {
+		modal.style.display = "none";
 		Swal.fire({
 			type: 'error',
 			title: 'Pogresan unos email-a',
 			text: 'Molimo Vas, probajte ponovo!',
-		
-		  })
+		})
 
-
-	} else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
-		saveUser(email.value, message.value);
+	} else {
+		modal.style.display = 'block';
+		document.getElementById('showMessage').innerHTML = message.value;
+		document.getElementById('showEmail').innerHTML = email.value;
 	}
 }
 
@@ -244,15 +262,13 @@ const endMsg = () => {
 	document.getElementById('loading').style.display = "none";
 }
 
-
 const cancel = () => {
-	users = JSON.parse(localStorage.getItem("users"));
-	users.pop();
-	localStorage.setItem("users", JSON.stringify(users));
+
 	modal.style.display = "none";
 }
 
 const sendMsg = () => {
+	saveUser(email.value, message.value)
 	// users;
 	document.getElementById("question").style.display = "none";
 	document.getElementById('loading').style.display = "block";
@@ -261,13 +277,7 @@ const sendMsg = () => {
 }
 
 
-
 const ok = () => {
 	document.getElementById('id01').style.display = 'none';
 	window.location.reload()
 }
-
-
-
-
-

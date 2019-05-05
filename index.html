@@ -657,13 +657,13 @@
                     <div class="footer-widget">
                         <h5 class="widget-title pb-10">Oblasti prava<span class="line-bottom"></span></h5>
                         <ul class="list-divider">
-                            <li><a href=""> Naknada štete</a></li>
-                            <li><a href=""> Krivično pravo</a></li>
-                            <li><a href=""> Imovinsko pravo</a></li>
-                            <li><a href="">Radno pravo</a></li>
-                            <li><a href="">Porodično pravo</a></li>
+                            <li><a href="#section1"> Naknada štete</a></li>
+                            <li><a href="#section1"> Krivično pravo</a></li>
+                            <li><a href="#section1"> Imovinsko pravo</a></li>
+                            <li><a href="#section1">Radno pravo</a></li>
+                            <li><a href="#section1">Porodično pravo</a></li>
 
-                            <li><a href="Usluge-/Pravo osiguranja.html"> Ugovorno pravo</a></li>
+                            <li><a href="#section1"> Ugovorno pravo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -672,11 +672,11 @@
                         <h5 class="widget-title">Stranice<span class="line-bottom"></span></h5>
                         <ul>
                             <li><a href="../index.html">Početna</a></li>
-                            <li><a href="../O-nama/O-nama.html">Obalsti rada</a></li>
-                            <li><a id="ourteam-line" href="../Klijenti/Klijenti.html">Naš tim</a></li>
-                            <li><a id="bline" href="../Kolektiv/Kolektiv.html">Klijenti</a></li>
-                            <li><a id="blog-line" href="../Usluge/Usluge.html">Blog</a></li>
-                            <li><a id="contact-line" href="Kontakt.html">Kontakt</a></li>
+                            <li><a href="#section1">Obalsti rada</a></li>
+                            <li><a id="ourteam-line" href="team.html">Naš tim</a></li>
+                            <li><a id="bline" href="#section2">Klijenti</a></li>
+                           
+                            <li><a id="contact-line" href="#section3">Kontakt</a></li>
                         </ul>
                     </div>
                 </div>
@@ -755,50 +755,82 @@
     <!-- This is pop up message with local storage -->
 
     <div id="id01" class="modal">
-        <form class="modal-content animate">
-            <div id="question" class="container">
-                <h2 class="areYouSure">Zelite da posaljete poruku?</h2>
+        <form class="modal-dialog ">
+            <div class=" modal-content animate" id="question" >
+                    <div  class="modal-header">
+                <h2 class="areYouSure">Zelite da posaljete poruku sledecim detaljima?</h2>
                 <h3><b>Email</b></h3>
                 <p id="showEmail"></p>
-
+            </div> 
+            <div class="modal-header">
                 <h3><b>Poruka</b></h3>
                 <p id="showMessage"></p>
-
-                <div class="container" style="background-color:#f1f1f1;">
-                    <button type="button" onclick="cancel(this)" class="cancelbtn">
+            </div> 
+                <div class="modal-footer" >
+                    <button type="button" onclick="cancel()" class="btn btn-secondary ">
                         Nazad
                     </button>
-                    <button type="button" class="cancelbtn" onclick="sendMsg(this)">
+                    <button type="button" class="btn btn-primary" onclick="sendMsg()">
                         Potvrdi
                     </button>
                 </div>
-            </div>
+            </div> 
             <!-- Loader -->
-
+         
             <div id="loading">
                 <h2 class="areYouSure">Samo momenat...</h2>
                 <img src="assets/Icons/loading.gif" alt="" />
             </div>
-            <div id="showEnd">
+            <div class="modal-footer" id="showEnd">
                 <h2 class="areYouSure">Vasa poruka je uspesno poslata</h2>
-                <button type="button" class="cancelbtn" onclick="ok()">U redu</button>
+                <button type="button" class="btn btn-primary" onclick="ok()">U redu</button>
             </div>
+        
         </form>
     </div>
+
     <!-- end popup local storage -->
+
+    <!-- New modal -->
+ <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+   -->
+  <!-- Modal -->
+  <div id="id02">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="send" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!------ Include the above in your HEAD tag ---------->
+    
+
 
     <!-- Start footer -->
     <footer id="footer">
         <div class="container">
 
-
-
             <div class="footer-left text-center">
                 <p>Designed by <a href="https://github.com/NikolaZdravkovic">Nikola Zdravkovic</a></p>
 
             </div>
-
-
         </div>
 
     </footer>

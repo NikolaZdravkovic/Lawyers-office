@@ -1,10 +1,9 @@
-
 // Adding review
 
 
 const btn = document.getElementById("sbmBtn");
-const name = document.getElementById("name");
-const surname = document.getElementById("surname");
+const yourName = document.getElementById("name");
+const lastName = document.getElementById("lastName");
 const email2 = document.getElementById("emailRev");
 const text = document.getElementById("text");
 const cards = document.getElementById("cards");
@@ -49,7 +48,7 @@ function getTasks() {
         const h3 = document.createElement('h3');
 
         h3.className = "title";
-        h3.innerHTML = newComm.name;
+        h3.innerHTML = newComm.yourName;
         div.appendChild(h3);
 
 
@@ -66,25 +65,26 @@ function getTasks() {
 function addTask(e) {
 
     const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-    const filterNameSurname = /[a-zA-Z]/
+    const filterName = /[a-zA-Z]/
+    
+
     if (!filter.test(email2.value)) {
         alert('please enter valid mail')
-        e.stopPropagation()
 
-    } if (!filterNameSurname.test(name.value)) {
-        return false;
+
     }
-    if (!filterNameSurname.test(surname.value)) {
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href>Why do I have this issue?</a>'
-          })
-        return false;
+    else if (!filterName.test(lastName.value)) {
+
+        showError('Please check your numbers');
     }
-    else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
-        save(name.value, surname.value, email2.value, text.value);
+
+    else if (!filterName.test(yourName.value)) {
+        showError('Please check your numbers');
+        // return;
+
+    } else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
+
+        save(yourName.value, lastName.value, email2.value, text.value);
 
         const div = document.createElement('div');
         div.className = "testimonial";
@@ -108,7 +108,7 @@ function addTask(e) {
         const h3 = document.createElement('h3');
 
         h3.className = "title";
-        h3.appendChild(document.createTextNode(name.value));
+        h3.appendChild(document.createTextNode(yourName.value));
         div.appendChild(h3);
 
 
@@ -117,24 +117,29 @@ function addTask(e) {
     }
 
 
+
+
+
+
     e.preventDefault();
 }
 
 
 
 // Store Task
-function save(name, surname, email2, text) {
+function save(yourName, lastName, email2, text) {
 
     let tasks = [];
 
 
 
     const newComm = {
-        name: name,
-        surname: surname,
+        yourName: yourName,
+        lastName: lastName,
         email2: email2,
         text: text
     };
+
 
     if (localStorage.getItem("tasks")) {
         tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -150,14 +155,40 @@ function save(name, surname, email2, text) {
         } else {
             alert(`User ${email2} already exist!`);
         }
-    }    //else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
-        // ne postoji polje/kljuc "users"
-        //tasks.push(newComm);
-        //localStorage.setItem("tasks", JSON.stringify(tasks));
-        //alert(`User successfully registered!`);
-        // location.assign("login.html");
-    //}
+    } else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
+        // ne postoji polje / kljuc "users"
+        tasks.push(newComm);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        alert(`User successfully registered!`);
+
+    }
 
 
 }
 
+// Show Error
+function showError(error) {
+    // Create a div
+    const errorDiv = document.createElement('div');
+
+    const infoCard = document.getElementById("information-card");
+    const headingInfo = document.getElementById("heading-info")
+
+    // Add class
+    errorDiv.className = 'alert alert-danger';
+
+    // Create text node and append to div
+    errorDiv.appendChild(document.createTextNode(error));
+
+    // Insert error above heading
+    infoCard.insertBefore(errorDiv, headingInfo);
+
+    // Clear error after 3 seconds
+    setTimeout(clearError, 3000);
+
+}
+
+// Clear error
+function clearError() {
+    document.querySelector('.alert').remove();
+}
