@@ -66,22 +66,18 @@ function addTask(e) {
 
     const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     const filterName = /[a-zA-Z]/
-    
+
 
     if (!filter.test(email2.value)) {
-        alert('please enter valid mail')
+        showError("Molimo proverite Vas mejl")
 
+    } else if (email2.value === '' || lastName.value === '' || yourName.value === '' || text.value === '') {
+        showError('Molimo da ne ostavljate polja prazna');
+    } else if (text.value.length < 10) {
+        showError('Molimo da unesete minimalno 10 slova u komentaru');
+    } else if (!filterName.test(lastName.value) || !filterName.test(yourName.value)) {
 
-    }
-    else if (!filterName.test(lastName.value)) {
-
-        showError('Please check your numbers');
-    }
-
-    else if (!filterName.test(yourName.value)) {
-        showError('Please check your numbers');
-        // return;
-
+        showError('Molimo kucajte samo slova');
     } else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
 
         save(yourName.value, lastName.value, email2.value, text.value);
@@ -150,7 +146,12 @@ function save(yourName, lastName, email2, text) {
         if (!tasks.find(comm => comm.email2 === newComm.email2)) {
             tasks.push(newComm);
             localStorage.setItem("tasks", JSON.stringify(tasks));
-            alert(`User successfully registered!`);
+            Swal.fire({
+                type: 'success',
+                title: 'Vaš komentar je uspešno poslat!',
+               
+              })
+            // alert(`User successfully registered!`);
             // location.assign("login.html");
         } else {
             alert(`User ${email2} already exist!`);
