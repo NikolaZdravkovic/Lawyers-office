@@ -253,13 +253,13 @@
           <div class="footer-widget">
             <h5 class="widget-title pb-10">Oblasti prava<span class="line-bottom"></span></h5>
             <ul class="list-divider">
-              <li><a href=""> Naknada štete</a></li>
-              <li><a href=""> Krivično pravo</a></li>
-              <li><a href=""> Imovinsko pravo</a></li>
-              <li><a href="">Radno pravo</a></li>
-              <li><a href="">Porodično pravo</a></li>
+              <li><a href="../index.html#section1"> Naknada štete</a></li>
+              <li><a href="../index.html#section1"> Krivično pravo</a></li>
+              <li><a href="../index.html#section1"> Imovinsko pravo</a></li>
+              <li><a href="../index.html#section1">Radno pravo</a></li>
+              <li><a href="../index.html#section1">Porodično pravo</a></li>
 
-              <li><a href="Usluge-/Pravo osiguranja.html"> Ugovorno pravo</a></li>
+              <li><a href="../index.html#section1"> Ugovorno pravo</a></li>
             </ul>
           </div>
         </div>
@@ -268,11 +268,11 @@
             <h5 class="widget-title">Stranice<span class="line-bottom"></span></h5>
             <ul>
               <li><a href="../index.html">Početna</a></li>
-              <li><a href="../O-nama/O-nama.html">Obalsti rada</a></li>
-              <li><a id="ourteam-line" href="../Klijenti/Klijenti.html">Naš tim</a></li>
-              <li><a id="client-line" href="../Kolektiv/Kolektiv.html">Klijenti</a></li>
-              <li><a id="blog-line" href="../Usluge/Usluge.html">Blog</a></li>
-              <li><a id="contact-line" href="Kontakt.html">Kontakt</a></li>
+              <li><a href="../index.html#section1">Obalsti rada</a></li>
+              <li><a id="ourteam-line" href="../team.html">Naš tim</a></li>
+              <li><a id="bline" href="../index.html#section2">Klijenti</a></li>
+
+              <li><a id="contact-line" href="#section3">Kontakt</a></li>
             </ul>
           </div>
         </div>
@@ -346,6 +346,46 @@
     <div id="map"></div>
   </section>
   <!-- End subscribe us -->
+
+ 
+    <!-- This is pop up message with local storage -->
+
+    <div id="id01" class="modal">
+      <form class="modal-dialog ">
+          <div class=" modal-content animate" id="question" >
+                  <div  class="modal-header">
+              <h2 class="areYouSure">Zelite da posaljete poruku sledecim detaljima?</h2>
+              <h3><b>Email</b></h3>
+              <p id="showEmail"></p>
+          </div> 
+          <div class="modal-header">
+              <h3><b>Poruka</b></h3>
+              <p id="showMessage"></p>
+          </div> 
+              <div class="modal-footer" >
+                  <button type="button" onclick="cancel()" class="btn btn-secondary ">
+                      Nazad
+                  </button>
+                  <button type="button" class="btn btn-primary" onclick="sendMsg()">
+                      Potvrdi
+                  </button>
+              </div>
+          </div> 
+          <!-- Loader -->
+       
+          <div id="loading">
+              <h2 class="areYouSure">Samo momenat...</h2>
+              <img src="../assets/Icons/loading.gif" alt="" />
+          </div>
+          <div class="modal-footer" id="showEnd">
+              <h2 class="areYouSure">Vasa poruka je uspesno poslata</h2>
+              <button type="button" class="btn btn-primary" onclick="ok()">U redu</button>
+          </div>
+      
+      </form>
+  </div>
+
+  <!-- end popup local storage -->
 
   <!-- Start footer -->
   <footer id="footer">

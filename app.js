@@ -172,27 +172,28 @@ $(function () {
 
 
 
-document.getElementById("btn").addEventListener("click", signup);
+document.getElementById("btn").addEventListener("click", sendLS);
 let users = [];
 const modal = document.getElementById('id01');
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 
 // Pozivamo eventListener sa kojim ujedno i cekiramo mail validaciju
-function signup(event) {
+// Function - eventListner that trigger Local Storage event
+function sendLS(event) {
 	event.preventDefault();
 
 	validation();
 
-}
 
+}
+// Function - save user and add to local storage
 const saveUser = (email, message) => {
 	const newUser = {
 		email: email,
 		message: message,
 
 	};
-
 
 	if (localStorage.getItem("users")) {
 		users = JSON.parse(localStorage.getItem("users"));
@@ -212,7 +213,7 @@ const saveUser = (email, message) => {
 
 }
 
-
+// Function - validate quick form message
 function validation() {
 	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
@@ -257,26 +258,28 @@ function validation() {
 	}
 }
 
+// Function - calling Loader modal
 const endMsg = () => {
 	document.getElementById('showEnd').style.display = "block";
 	document.getElementById('loading').style.display = "none";
 }
 
+// Function - cancel sending to Local Storage
 const cancel = () => {
 
 	modal.style.display = "none";
 }
 
+// Function - send to Local Storage
 const sendMsg = () => {
 	saveUser(email.value, message.value)
-	// users;
 	document.getElementById("question").style.display = "none";
 	document.getElementById('loading').style.display = "block";
 
 	setTimeout(endMsg, 2000);
 }
 
-
+// Function - pressing ok at the end reloades page
 const ok = () => {
 	document.getElementById('id01').style.display = 'none';
 	window.location.reload()
