@@ -404,6 +404,12 @@
                             <div class="form-group">
                                 <input id="email" name="form_email" class="form-control" type="text" required=""
                                     placeholder="Vaša e-mail adresa" />
+
+                            </div>
+                            <div class="form-group">
+                                <input id="name" name="form_name" class="form-control" type="text" required=""
+                                    placeholder="Vaše ime" />
+
                             </div>
                             <div class="form-group">
                                 <textarea id="message" name="form_message" class="form-control"
@@ -421,8 +427,7 @@
                                 </button>
                             </div>
                         </form>
-                        <!-- Quick Contact Form Validation-->
-
+                        <!-- End quick form -->
                     </div>
                 </div>
 
@@ -435,31 +440,25 @@
                         <hr>
                         <div class="col-sm-12 col-sm-4 mt-sm-50">
                             <div class="each-widget">
-                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-mobile fa-2x"
-                                        aria-hidden="true"></i>
-                                </div>
-                                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Kontakt
-                                </h4>
-                                <p style="color: #8d8d8d">Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43
+                                <div><i class="fas fa-mobile fa-2x" aria-hidden="true"></i></div>
+                                <h5 class="text-theme-colored">Kontakt
+                                </h5>
+                                <p>Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43
                                 </p>
                             </div>
                         </div>
                         <div class="col-sm-12 col-sm-4 mt-sm-50">
                             <div class="each-widget">
-                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-location-arrow fa-2x"
-                                        aria-hidden="true"></i></div>
-                                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Adresa</h4>
-                                <p style="color: #8d8d8d">Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
+                                <div><i class="fas fa-location-arrow fa-2x" aria-hidden="true"></i></div>
+                                <h5 class="text-theme-colored">Adresa</h5>
+                                <p>Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
                             </div>
                         </div>
                         <div class="col-sm-12 col-sm-4 mt-sm-50">
                             <div class="each-widget">
-                                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-envelope fa-2x"
-                                        aria-hidden="true"></i>
-                                </div>
-                                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">E-mail</h4>
-                                <p><a style="color: #8d8d8d"
-                                        href="mailto:office@adv-bijelic.co.rs">office@adv-bijelic.co.rs</a></p>
+                                <div><i class="fas fa-envelope fa-2x" aria-hidden="true"></i></div>
+                                <h5 class="text-theme-colored">E-mail</h5>
+                                <p><a>office@adv-cimb-zdra.co.rs</a></p>
                             </div>
                         </div>
                     </div>
@@ -467,11 +466,10 @@
             </div>
 
         </div>
-        <div id="map"></div>
+        <div id="map">
+        </div>
     </section>
-    <!-- End subscribe us -->
-
-
+    <!-- End bottom page -->
 
     <!-- This is pop up message with local storage -->
 
@@ -484,9 +482,14 @@
                     <p id="showEmail"></p>
                 </div>
                 <div class="modal-header">
+                    <h3><b>Ime</b></h3>
+                    <p id="showName"></p>
+                </div>
+                <div class="modal-header">
                     <h3><b>Poruka</b></h3>
                     <p id="showMessage"></p>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" onclick="cancel()" class="btn btn-secondary ">
                         Nazad

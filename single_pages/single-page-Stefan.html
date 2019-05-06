@@ -280,112 +280,123 @@
         <div class="col-sm-6 col-md-3">
           <div class="footer-widget">
             <h5 class="widget-title pb-10">Kontakt<span class="line-bottom"></span></h5>
-            <!-- Quick form -->
+                    <!-- Quick form -->
 
-            <form id="form" name="footer_quick_contact_form" class="quick-contact-form">
-              <div class="form-group">
-                <input id="email" name="form_email" class="form-control" type="text" required=""
-                  placeholder="Vaša e-mail adresa" />
+                    <form id="form" name="footer_quick_contact_form" class="quick-contact-form">
+                      <div class="form-group">
+                          <input id="email" name="form_email" class="form-control" type="text" required=""
+                              placeholder="Vaša e-mail adresa" />    
+                            
+                      </div>
+                      <div class="form-group">
+                          <input id="name" name="form_name" class="form-control" type="text" required=""
+                              placeholder="Vaše ime" />    
+                            
+                      </div>
+                      <div class="form-group">
+                          <textarea id="message" name="form_message" class="form-control"
+                              placeholder="Tekst poruke" rows="3" required=""></textarea>
+                      </div>
+                      <div class="form-group">
+                          <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden"
+                              value="" />
+
+                          <!-- OSTALO TI JE OVDE DA OVO DUGME SREDIS KAO I CELU OVU KONTAKT FORMU -->
+
+                          <button id="btn" style="color: black" type="submit"
+                              class="btn btn-dark btn-theme-colored btn-xs btn-flat mt-0"
+                             >
+                              Pošalji
+                          </button>
+                      </div>
+                  </form>
+                  <!-- End quick form -->
               </div>
-              <div class="form-group">
-                <textarea id="message" name="form_message" class="form-control" placeholder="Tekst poruke" rows="3"
-                  required=""></textarea>
-              </div>
-              <div class="form-group">
-                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="" />
-
-                <!-- OSTALO TI JE OVDE DA OVO DUGME SREDIS KAO I CELU OVU KONTAKT FORMU -->
-
-                <button id="btn" style="color: black" type="submit"
-                  class="btn btn-dark btn-theme-colored btn-xs btn-flat mt-0">
-                  Pošalji
-                </button>
-              </div>
-            </form>
-            <!-- Quick Contact Form Validation-->
-
           </div>
-        </div>
 
       </div>
 
       <div class="row clearfix">
-        <div id="section3" class="col-md-12">
+          <div id="section3" class="col-md-12">
 
-          <div class="horizontal-contact-widget mt-50 pt-30 text-center">
-            <hr>
-            <div class="col-sm-12 col-sm-4 mt-sm-50">
-              <div class="each-widget">
-                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-mobile fa-2x" aria-hidden="true"></i>
-                </div>
-                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Kontakt</h4>
-                <p style="color: #8d8d8d">Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43 </p>
+              <div class="horizontal-contact-widget mt-50 pt-30 text-center">
+                  <hr>
+                  <div class="col-sm-12 col-sm-4 mt-sm-50">
+                      <div class="each-widget">
+                          <div><i class="fas fa-mobile fa-2x" aria-hidden="true"></i></div>
+                          <h5 class="text-theme-colored">Kontakt
+                          </h5>
+                          <p>Telefon:+381 (11) 409.11.76 <br>Mobilini:+381 (63) 712.65.43
+                          </p>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-sm-4 mt-sm-50">
+                      <div class="each-widget">
+                          <div><i class="fas fa-location-arrow fa-2x" aria-hidden="true"></i></div>
+                              <h5 class="text-theme-colored">Adresa</h5>
+                          <p>Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
+                      </div>
+                  </div>
+                  <div class="col-sm-12 col-sm-4 mt-sm-50">
+                      <div class="each-widget">
+                          <div><i class="fas fa-envelope fa-2x" aria-hidden="true"></i></div>
+                          <h5 class="text-theme-colored">E-mail</h5>
+                          <p><a>office@adv-cimb-zdra.co.rs</a></p>
+                      </div>
+                  </div>
               </div>
-            </div>
-            <div class="col-sm-12 col-sm-4 mt-sm-50">
-              <div class="each-widget">
-                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-location-arrow fa-2x"
-                    aria-hidden="true"></i></div>
-                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">Adresa</h4>
-                <p style="color: #8d8d8d">Vojvode Stepe 202, Vozdovac <br>11000 Beograd</p>
-              </div>
-            </div>
-            <div class="col-sm-12 col-sm-4 mt-sm-50">
-              <div class="each-widget">
-                <div><i style="color:#8d8d8d;padding-top: 15px; " class="fa fa-envelope fa-2x" aria-hidden="true"></i>
-                </div>
-                <h4 style="padding-top: px; color: darkgoldenrod" class="text-theme-colored">E-mail</h4>
-                <p><a style="color: #8d8d8d" href="mailto:office@adv-bijelic.co.rs">office@adv-bijelic.co.rs</a></p>
-              </div>
-            </div>
           </div>
-        </div>
       </div>
 
-    </div>
-    <div id="map"></div>
-  </section>
-  <!-- End subscribe us -->
-
- 
-    <!-- This is pop up message with local storage -->
-
-    <div id="id01" class="modal">
-      <form class="modal-dialog ">
-          <div class=" modal-content animate" id="question" >
-                  <div  class="modal-header">
-              <h2 class="areYouSure">Zelite da posaljete poruku sledecim detaljima?</h2>
-              <h3><b>Email</b></h3>
-              <p id="showEmail"></p>
-          </div> 
-          <div class="modal-header">
-              <h3><b>Poruka</b></h3>
-              <p id="showMessage"></p>
-          </div> 
-              <div class="modal-footer" >
-                  <button type="button" onclick="cancel()" class="btn btn-secondary ">
-                      Nazad
-                  </button>
-                  <button type="button" class="btn btn-primary" onclick="sendMsg()">
-                      Potvrdi
-                  </button>
-              </div>
-          </div> 
-          <!-- Loader -->
-       
-          <div id="loading">
-              <h2 class="areYouSure">Samo momenat...</h2>
-              <img src="../assets/Icons/loading.gif" alt="" />
-          </div>
-          <div class="modal-footer" id="showEnd">
-              <h2 class="areYouSure">Vasa poruka je uspesno poslata</h2>
-              <button type="button" class="btn btn-primary" onclick="ok()">U redu</button>
-          </div>
-      
-      </form>
   </div>
+  <div id="map">
+                      </div>
+</section>
+<!-- End bottom page -->
 
-  <!-- end popup local storage -->
+<!-- This is pop up message with local storage -->
+
+<div id="id01" class="modal">
+  <form class="modal-dialog ">
+      <div class=" modal-content animate" id="question" >
+              <div  class="modal-header">
+          <h2 class="areYouSure">Zelite da posaljete poruku sledecim detaljima?</h2>
+          <h3><b>Email</b></h3>
+          <p id="showEmail"></p>
+      </div> 
+      <div class="modal-header">
+          <h3><b>Ime</b></h3>
+          <p id="showName"></p>
+      </div> 
+      <div class="modal-header">
+          <h3><b>Poruka</b></h3>
+          <p id="showMessage"></p>
+      </div> 
+    
+          <div class="modal-footer" >
+              <button type="button" onclick="cancel()" class="btn btn-secondary ">
+                  Nazad
+              </button>
+              <button type="button" class="btn btn-primary" onclick="sendMsg()">
+                  Potvrdi
+              </button>
+          </div>
+      </div> 
+      <!-- Loader -->
+   
+      <div id="loading">
+          <h2 class="areYouSure">Samo momenat...</h2>
+          <img src="../assets/Icons/loading.gif" alt="" />
+      </div>
+      <div class="modal-footer" id="showEnd">
+          <h2 class="areYouSure">Vasa poruka je uspesno poslata</h2>
+          <button type="button" class="btn btn-primary" onclick="ok()">U redu</button>
+      </div>
+  
+  </form>
+</div>
+
+<!-- end popup local storage -->
 
   <!-- Start footer -->
   <footer id="footer">

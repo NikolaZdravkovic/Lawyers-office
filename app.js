@@ -169,14 +169,12 @@ $(function () {
 /* 9. LOCAL STORAGE FOR QUICK FORM */
 
 
-
-
-
 document.getElementById("btn").addEventListener("click", sendLS);
-let users = [];
+let messages = [];
 const modal = document.getElementById('id01');
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const name = document.getElementById("name");
 
 // Pozivamo eventListener sa kojim ujedno i cekiramo mail validaciju
 // Function - eventListner that trigger Local Storage event
@@ -185,31 +183,28 @@ function sendLS(event) {
 
 	validation();
 
-
 }
-// Function - save user and add to local storage
-const saveUser = (email, message) => {
-	const newUser = {
+// Function - save message and add to local storage
+const saveMessage = (name, email, message) => {
+	const newMessage = {
+		name: name,
 		email: email,
 		message: message,
 
 	};
 
-	if (localStorage.getItem("users")) {
-		users = JSON.parse(localStorage.getItem("users"));
+	if (localStorage.getItem("messages")) {
+		messages = JSON.parse(localStorage.getItem("messages"));
 
-		users.push(newUser);
-		localStorage.setItem("users", JSON.stringify(users));
+		messages.push(newMessage);
+		localStorage.setItem("messages", JSON.stringify(messages));
 
 	} else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
-		// ne postoji polje/kljuc "users"
-		users.push(newUser);
-		localStorage.setItem("users", JSON.stringify(users));
+		// ne postoji polje/kljuc "messages"
+		messages.push(newMessage);
+		localStorage.setItem("messages", JSON.stringify(messages));
 	}
-	modal.style.display = 'block';
-
-	document.getElementById('showMessage').innerHTML = message;
-	document.getElementById('showEmail').innerHTML = email;
+	
 
 }
 
@@ -217,20 +212,11 @@ const saveUser = (email, message) => {
 function validation() {
 	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
-	if (email.value === '') {
+	if (email.value === '' || message.value === '' || name.value === '') {
 		modal.style.display = "none";
 		Swal.fire({
 			type: 'error',
-			title: 'Niste uneli Vas Email!',
-			text: 'Molimo Vas, probajte ponovo!',
-
-		})
-
-	} else if (message.value === '') {
-		modal.style.display = "none";
-		Swal.fire({
-			type: 'error',
-			title: 'Niste uneli nista u tekst poruke',
+			title: 'Molimo popunite sva polja!',
 			text: 'Molimo Vas, probajte ponovo!',
 
 		})
@@ -255,6 +241,8 @@ function validation() {
 		modal.style.display = 'block';
 		document.getElementById('showMessage').innerHTML = message.value;
 		document.getElementById('showEmail').innerHTML = email.value;
+		document.getElementById('showName').innerHTML = name.value;
+
 	}
 }
 
@@ -272,7 +260,7 @@ const cancel = () => {
 
 // Function - send to Local Storage
 const sendMsg = () => {
-	saveUser(email.value, message.value)
+	saveMessage(name.value, email.value, message.value)
 	document.getElementById("question").style.display = "none";
 	document.getElementById('loading').style.display = "block";
 

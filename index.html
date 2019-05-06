@@ -690,7 +690,13 @@
                         <form id="form" name="footer_quick_contact_form" class="quick-contact-form">
                             <div class="form-group">
                                 <input id="email" name="form_email" class="form-control" type="text" required=""
-                                    placeholder="Vaša e-mail adresa" />
+                                    placeholder="Vaša e-mail adresa" />    
+                                  
+                            </div>
+                            <div class="form-group">
+                                <input id="name" name="form_name" class="form-control" type="text" required=""
+                                    placeholder="Vaše ime" />    
+                                  
                             </div>
                             <div class="form-group">
                                 <textarea id="message" name="form_message" class="form-control"
@@ -764,9 +770,14 @@
                 <p id="showEmail"></p>
             </div> 
             <div class="modal-header">
+                <h3><b>Ime</b></h3>
+                <p id="showName"></p>
+            </div> 
+            <div class="modal-header">
                 <h3><b>Poruka</b></h3>
                 <p id="showMessage"></p>
             </div> 
+          
                 <div class="modal-footer" >
                     <button type="button" onclick="cancel()" class="btn btn-secondary ">
                         Nazad

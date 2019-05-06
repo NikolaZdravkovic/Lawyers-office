@@ -2,7 +2,7 @@
 
 
 const btn = document.getElementById("sbmBtn");
-const yourName = document.getElementById("name");
+const firstName = document.getElementById("name_2");
 const lastName = document.getElementById("lastName");
 const email2 = document.getElementById("emailRev");
 const text = document.getElementById("text");
@@ -10,21 +10,21 @@ const cards = document.getElementById("cards");
 const form = document.querySelector('#task-form');
 
 // DOM Load event
-document.addEventListener('DOMContentLoaded', getTasks);
+document.addEventListener('DOMContentLoaded', getComment);
 // Add task event
-form.addEventListener('submit', addTask);
+form.addEventListener('submit', addComment);
 
-// Get Tasks from LS
-function getTasks() {
+// Get Comments from LS
+function getComment() {
 
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-        tasks = [];
+    let comments;
+    if (localStorage.getItem('comments') === null) {
+        comments = [];
     } else {
-        tasks = JSON.parse(localStorage.getItem('tasks'));
+        comments = JSON.parse(localStorage.getItem('comments'));
     }
 
-    tasks.forEach(function (newComm) {
+    comments.forEach(function (newComm) {
 
         const div = document.createElement('div');
         div.className = "testimonial";
@@ -48,7 +48,7 @@ function getTasks() {
         const h3 = document.createElement('h3');
 
         h3.className = "title";
-        h3.innerHTML = newComm.yourName;
+        h3.innerHTML = newComm.firstName;
         div.appendChild(h3);
 
 
@@ -62,7 +62,7 @@ function getTasks() {
 
 
 // Add Task
-function addTask(e) {
+function addComment(e) {
 
     const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     const filterName = /[a-zA-Z]/
@@ -71,44 +71,16 @@ function addTask(e) {
     if (!filter.test(email2.value)) {
         showError("Molimo proverite Vas mejl")
 
-    } else if (email2.value === '' || lastName.value === '' || yourName.value === '' || text.value === '') {
+    } else if (email2.value === '' || lastName.value === '' || firstName.value === '' || text.value === '') {
         showError('Molimo da ne ostavljate polja prazna');
     } else if (text.value.length < 10) {
         showError('Molimo da unesete minimalno 10 slova u komentaru');
-    } else if (!filterName.test(lastName.value) || !filterName.test(yourName.value)) {
+    } else if (!filterName.test(lastName.value) || !filterName.test(firstName.value)) {
 
         showError('Molimo kucajte samo slova');
     } else { // ukoliko user ne prodje validaciju, ne ispiujemo ga
 
-        save(yourName.value, lastName.value, email2.value, text.value);
-
-        const div = document.createElement('div');
-        div.className = "testimonial";
-
-        const div2 = document.createElement('div');
-        div2.className = "pic";
-
-        div.appendChild(div2);
-
-        const img = document.createElement('img');
-        img.src = "tormund.png";
-
-        div2.appendChild(img);
-
-        const p = document.createElement('p');
-        p.className = "description";
-        p.appendChild(document.createTextNode(text.value));
-
-        div.appendChild(p);
-
-        const h3 = document.createElement('h3');
-
-        h3.className = "title";
-        h3.appendChild(document.createTextNode(yourName.value));
-        div.appendChild(h3);
-
-
-        cards.appendChild(div);
+        save(firstName.value, lastName.value, email2.value, text.value);
 
     }
 
@@ -123,44 +95,51 @@ function addTask(e) {
 
 
 // Store Task
-function save(yourName, lastName, email2, text) {
+const save = (firstName, lastName, email2, text) => {
 
-    let tasks = [];
+    let comments = [];
 
 
 
     const newComm = {
-        yourName: yourName,
+        firstName: firstName,
         lastName: lastName,
         email2: email2,
         text: text
     };
 
 
-    if (localStorage.getItem("tasks")) {
-        tasks = JSON.parse(localStorage.getItem("tasks"));
+    if (localStorage.getItem("comments")) {
+        comments = JSON.parse(localStorage.getItem("comments"));
 
 
 
 
-        if (!tasks.find(comm => comm.email2 === newComm.email2)) {
-            tasks.push(newComm);
-            localStorage.setItem("tasks", JSON.stringify(tasks));
+        if (!comments.find(comm => comm.email2 === newComm.email2)) {
+            comments.push(newComm);
+            localStorage.setItem("comments", JSON.stringify(comments));
             Swal.fire({
                 type: 'success',
                 title: 'Vaš komentar je uspešno poslat!',
-               
-              })
+
+            })
+            appendCard();
             // alert(`User successfully registered!`);
             // location.assign("login.html");
         } else {
-            alert(`User ${email2} already exist!`);
+            showError("Vec ste komentarisali")
+
         }
     } else { // Ovo se izvrsava samo prvi put, tj. samo kada u localStorage-u
         // ne postoji polje / kljuc "users"
-        tasks.push(newComm);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        alert(`User successfully registered!`);
+        comments.push(newComm);
+        localStorage.setItem("comments", JSON.stringify(comments));
+        Swal.fire({
+            type: 'success',
+            title: 'Vaš komentar je uspešno poslat!',
+
+        })
+        appendCard();
 
     }
 
@@ -192,4 +171,34 @@ function showError(error) {
 // Clear error
 function clearError() {
     document.querySelector('.alert').remove();
+}
+
+function appendCard() {
+    const div = document.createElement('div');
+    div.className = "testimonial";
+
+    const div2 = document.createElement('div');
+    div2.className = "pic";
+
+    div.appendChild(div2);
+
+    const img = document.createElement('img');
+    img.src = "tormund.png";
+
+    div2.appendChild(img);
+
+    const p = document.createElement('p');
+    p.className = "description";
+    p.appendChild(document.createTextNode(text.value));
+
+    div.appendChild(p);
+
+    const h3 = document.createElement('h3');
+
+    h3.className = "title";
+    h3.appendChild(document.createTextNode(firstName.value));
+    div.appendChild(h3);
+
+
+    cards.appendChild(div);
 }
