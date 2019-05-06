@@ -183,7 +183,7 @@ function appendCard() {
     div.appendChild(div2);
 
     const img = document.createElement('img');
-    img.src = "tormund.png";
+    img.src = "anonimo.png";
 
     div2.appendChild(img);
 
