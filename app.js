@@ -204,13 +204,14 @@ const saveMessage = (name, email, message) => {
 		messages.push(newMessage);
 		localStorage.setItem("messages", JSON.stringify(messages));
 	}
-	
+
 
 }
 
 // Function - validate quick form message
 function validation() {
 	const filter = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+	const filterName = /[a-zA-Z]/
 
 	if (email.value === '' || message.value === '' || name.value === '') {
 		modal.style.display = "none";
@@ -225,7 +226,7 @@ function validation() {
 		modal.style.display = "none";
 		Swal.fire({
 			type: 'error',
-			title: 'Molimo da posaljete poruku sa minimum 20 slova',
+			title: 'Molimo da pošaljete poruku sa minimum 20 slova',
 			text: 'Molimo Vas, probajte ponovo!',
 
 		})
@@ -237,6 +238,12 @@ function validation() {
 			text: 'Molimo Vas, probajte ponovo!',
 		})
 
+	} else if (!filterName.test(name.value)) {
+		Swal.fire({
+			type: 'error',
+			title: 'Molimo unesite samo slova',
+			text: 'Molimo Vas, probajte ponovo!',
+		})
 	} else {
 		modal.style.display = 'block';
 		document.getElementById('showMessage').innerHTML = message.value;

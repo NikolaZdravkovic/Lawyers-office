@@ -35,7 +35,7 @@ function getComment() {
         div.appendChild(div2);
 
         const img = document.createElement('img');
-        img.src = "tormund.png";
+        img.src = "anonimo.png";
 
         div2.appendChild(img);
 
@@ -124,6 +124,7 @@ const save = (firstName, lastName, email2, text) => {
 
             })
             appendCard();
+            setTimeout(reload, 2000)
             // alert(`User successfully registered!`);
             // location.assign("login.html");
         } else {
@@ -139,7 +140,10 @@ const save = (firstName, lastName, email2, text) => {
             title: 'Vaš komentar je uspešno poslat!',
 
         })
+
         appendCard();
+        setTimeout(reload, 2000)
+
 
     }
 
@@ -201,4 +205,9 @@ function appendCard() {
 
 
     cards.appendChild(div);
+
+}
+
+function reload() {
+    window.location.reload();
 }
