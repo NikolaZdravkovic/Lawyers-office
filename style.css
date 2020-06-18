@@ -54,9 +54,7 @@ img {
     right: 0;
     bottom: 0;
     background-color: #fff;
-    /* change if the mask should have another color then white */
     z-index: 99999;
-    /* makes sure it stays on top */
 }
 
 #status {
@@ -64,15 +62,11 @@ img {
     height: 200px;
     position: absolute;
     left: 50%;
-    /* centers the loading animation horizontally one the screen */
     top: 50%;
-    /* centers the loading animation vertically one the screen */
     background-image: url(assets/images/loader.gif);
-    /* path to your loading animation */
     background-repeat: no-repeat;
     background-position: center;
     margin: -100px 0 0 -100px;
-    /* is width and height divided by two */
 }
 
 /*scrol to top*/
@@ -569,22 +563,6 @@ img {
     font-size: 30px;
 }
 
-/*
-.main-slider .slick-dots {
-  bottom: 10px;  
-}
-
-.main-slider .slick-dots li {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-}
-
-.main-slider .slick-dots li button::before {
-  font-size: 25px;
-  line-height: 21px;
-}
-
-*/
 
 .slide-article {
     display: inline;
@@ -1577,7 +1555,6 @@ img {
     top: 2px;
 }
 
-}
 
 .text-center {
     text-align: center !important;
@@ -1625,9 +1602,7 @@ img {
     background-color: darkgoldenrod;
     content: "";
     height: 2px;
-    left: ;
     position: absolute;
-    top: ;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
